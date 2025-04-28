@@ -1,6 +1,8 @@
 package src;
 
+import src.study.design.pattern.builder.CastleBuilder;
 import src.study.design.pattern.factory.ToyFactory;
+import src.study.design.pattern.model.Castle;
 import src.study.design.pattern.model.InBox;
 import src.study.design.pattern.model.Player;
 import src.study.design.pattern.model.Toy;
@@ -51,6 +53,17 @@ public class Main {
 
         inBox.notifyObservers("Hello 1!");
         inBox.notifyObservers("Hello 2!");
+
+        System.out.println("\nDesign Pattern Example Builder");
+        Castle castle = new CastleBuilder()
+                .addTower("Tower 1")
+                .addTower("Tower 2")
+                .addWall("Wall 1")
+                .addWall("Wall 2")
+                .build();
+
+        System.out.println("Castle built with walls: " + String.join(", ", castle.getWalls()));
+        System.out.println("Castle built with towers: " + String.join(", ", castle.getTowers()));
 
     }
 }

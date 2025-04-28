@@ -15,5 +15,5 @@ public class ToyFactory {
             default -> throw new IllegalArgumentException("Unknown toy type: " + type);
         };
     }
-    
+
 }
