@@ -6,7 +6,6 @@ import src.study.design.pattern.model.Robot;
 import src.study.design.pattern.model.Toy;
 
 public class ToyFactory {
-
     public Toy createToy(String type) {
         return switch (type.toLowerCase()) {
             case "car" -> new Toy(new Car("car"));
@@ -15,5 +14,4 @@ public class ToyFactory {
             default -> throw new IllegalArgumentException("Unknown toy type: " + type);
         };
     }
-
 }
