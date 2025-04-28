@@ -8,6 +8,7 @@ import src.study.design.pattern.model.Player;
 import src.study.design.pattern.model.Toy;
 import src.study.design.pattern.observer.MessageObserver;
 import src.study.design.pattern.observer.impl.MessageServiceImpl;
+import src.study.design.pattern.prototype.impl.Picture;
 import src.study.design.pattern.service.impl.ToyServiceImpl;
 import src.study.design.pattern.singleton.SuperBallSigleton;
 import src.study.design.pattern.strategy.PlayStrategy;
@@ -67,11 +68,19 @@ public class Main {
         System.out.println("Castle built with towers: " + String.join(", ", castle.getTowers()));
 
         System.out.println("\nDesign Pattern Example Singleton");
-        
+
         SuperBallSigleton superBall = SuperBallSigleton.getInstance();
         superBall.play();
 
+        System.out.println("\nDesign Pattern Example Prototype");
+        Picture service = new Picture("Castle");
+        Picture originalPicture = new Picture(service.getName());
+        Picture clonedPicture = originalPicture.clone();
 
+        originalPicture.display();
+        clonedPicture.display();
+
+        System.out.println("\nDesign Pattern Example Adapter");
 
     }
 }
