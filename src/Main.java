@@ -9,6 +9,7 @@ import src.study.design.pattern.model.Toy;
 import src.study.design.pattern.observer.MessageObserver;
 import src.study.design.pattern.observer.impl.MessageServiceImpl;
 import src.study.design.pattern.service.impl.ToyServiceImpl;
+import src.study.design.pattern.singleton.SuperBallSigleton;
 import src.study.design.pattern.strategy.PlayStrategy;
 import src.study.design.pattern.strategy.impl.PassBall;
 import src.study.design.pattern.strategy.impl.RunFast;
@@ -64,6 +65,13 @@ public class Main {
 
         System.out.println("Castle built with walls: " + String.join(", ", castle.getWalls()));
         System.out.println("Castle built with towers: " + String.join(", ", castle.getTowers()));
+
+        System.out.println("\nDesign Pattern Example Singleton");
+        
+        SuperBallSigleton superBall = SuperBallSigleton.getInstance();
+        superBall.play();
+
+
 
     }
 }
