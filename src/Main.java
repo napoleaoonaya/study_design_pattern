@@ -1,11 +1,10 @@
 package src;
 
+import src.study.design.pattern.adapter.SquareSocket;
+import src.study.design.pattern.adapter.impl.SocketAdapterImpl;
 import src.study.design.pattern.builder.CastleBuilder;
 import src.study.design.pattern.factory.ToyFactory;
-import src.study.design.pattern.model.Castle;
-import src.study.design.pattern.model.InBox;
-import src.study.design.pattern.model.Player;
-import src.study.design.pattern.model.Toy;
+import src.study.design.pattern.model.*;
 import src.study.design.pattern.observer.MessageObserver;
 import src.study.design.pattern.observer.impl.MessageServiceImpl;
 import src.study.design.pattern.prototype.impl.Picture;
@@ -81,6 +80,10 @@ public class Main {
         clonedPicture.display();
 
         System.out.println("\nDesign Pattern Example Adapter");
+        RoundSocket roundSocket = new RoundSocket();
+        SquareSocket squareSocket = new SocketAdapterImpl(roundSocket);
+
+        squareSocket.squarePlugIn();
 
     }
 }
