@@ -1,6 +1,12 @@
-import study.design.pattern.factory.ToyFactory;
-import study.design.pattern.model.Toy;
-import study.design.pattern.service.impl.ToyServiceImpl;
+package src;
+
+import src.study.design.pattern.factory.ToyFactory;
+import src.study.design.pattern.model.Player;
+import src.study.design.pattern.model.Toy;
+import src.study.design.pattern.service.impl.ToyServiceImpl;
+import src.study.design.pattern.strategy.PlayStrategy;
+import src.study.design.pattern.strategy.impl.RunFast;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,5 +25,9 @@ public class Main {
         Toy robot = factory.createToy("robot");
         System.out.println("Created toy: " + robot.getName());
         toyService.toPlay(robot.getName());
+
+        PlayStrategy playStrategy = new RunFast();
+        Player player = new Player(playStrategy);
+        player.play();
     }
 }

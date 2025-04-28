@@ -1,9 +1,9 @@
-package study.design.pattern.factory;
+package src.study.design.pattern.factory;
 
-import study.design.pattern.model.Car;
-import study.design.pattern.model.Doll;
-import study.design.pattern.model.Robot;
-import study.design.pattern.model.Toy;
+import src.study.design.pattern.model.Car;
+import src.study.design.pattern.model.Doll;
+import src.study.design.pattern.model.Robot;
+import src.study.design.pattern.model.Toy;
 
 public class ToyFactory {
     public Toy createToy(String type) {

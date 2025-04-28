@@ -1,6 +1,6 @@
-package study.design.pattern.service.impl;
+package src.study.design.pattern.service.impl;
 
-import study.design.pattern.service.ToyService;
+import src.study.design.pattern.service.ToyService;
 
 public class ToyServiceImpl implements ToyService {
     @Override

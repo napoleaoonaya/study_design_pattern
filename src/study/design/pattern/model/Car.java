@@ -1,4 +1,4 @@
-package study.design.pattern.model;
+package src.study.design.pattern.model;
 
 public class Car {
 

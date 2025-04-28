@@ -1,4 +1,4 @@
-package study.design.pattern.service;
+package src.study.design.pattern.service;
 
 public interface ToyService {
     void toPlay(String toy);
