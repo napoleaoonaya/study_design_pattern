@@ -1,15 +1,21 @@
 package src;
 
 import src.study.design.pattern.factory.ToyFactory;
+import src.study.design.pattern.model.InBox;
 import src.study.design.pattern.model.Player;
 import src.study.design.pattern.model.Toy;
+import src.study.design.pattern.observer.MessageObserver;
+import src.study.design.pattern.observer.impl.MessageServiceImpl;
 import src.study.design.pattern.service.impl.ToyServiceImpl;
 import src.study.design.pattern.strategy.PlayStrategy;
+import src.study.design.pattern.strategy.impl.PassBall;
 import src.study.design.pattern.strategy.impl.RunFast;
 
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("Design Pattern Example Factory");
 
         ToyFactory factory = new ToyFactory();
         ToyServiceImpl toyService = new ToyServiceImpl();
@@ -26,8 +32,25 @@ public class Main {
         System.out.println("Created toy: " + robot.getName());
         toyService.toPlay(robot.getName());
 
-        PlayStrategy playStrategy = new RunFast();
-        Player player = new Player(playStrategy);
-        player.play();
+        System.out.println("\nDesign Pattern Example Strategy");
+
+        PlayStrategy playStrategyOne = new RunFast();
+        Player playerOne = new Player(playStrategyOne);
+        playerOne.play();
+
+        PlayStrategy playStrategyTwo = new PassBall();
+        Player playerTwo = new Player(playStrategyTwo);
+        playerTwo.play();
+
+        System.out.println("\nDesign Pattern Example Observer");
+
+        InBox inBox = new InBox();
+
+        MessageObserver observer = new MessageServiceImpl();
+        inBox.addObserver(observer);
+
+        inBox.notifyObservers("Hello 1!");
+        inBox.notifyObservers("Hello 2!");
+
     }
 }
